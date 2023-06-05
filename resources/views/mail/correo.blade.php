@@ -29,7 +29,7 @@
         <label for=""><b>CodigoSIS:</b></label>
         <label for="">{{$dato->CodigoSIS}}</label><br>
         <label for=""><b>Email:</b></label>
-        <label for="">{{$dato->Email}}</label><br>
+        <input type="email" name="correo" id="" value="{{$dato->Email}}">
         @endforeach
         <label for=""><b>Mensaje:</b></label><br>
         <textarea name="mensaje" id="mensaje" rows="5" ></textarea>
