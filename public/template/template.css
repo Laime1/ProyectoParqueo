@@ -1,0 +1,17 @@
+img{
+    width: 60px;
+    height: 60px;
+}
+a{
+    color: black;
+}
+.navbar{
+    background-color: red;
+}
+ .dropdown li a {
+background-color: red;
+color: white;
+}
+body{
+    background-color: white;
+}

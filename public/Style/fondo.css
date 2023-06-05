@@ -1,0 +1,12 @@
+body{
+background-image: url("/imagenes/fondo.png") ;
+background-size: cover; /* para cubrir todo el fondo */
+background-position: center;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+  }
+  
+ 
