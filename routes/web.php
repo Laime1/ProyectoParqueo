@@ -6,6 +6,7 @@ use App\Http\Controllers\SolicitudController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\PersonalController;
 use App\Http\Controllers\CorreoController;
+use App\Http\Controllers\QuejaController;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\EnviarCorreo;
 
@@ -84,3 +85,8 @@ Route::resource('/clientes',ClienteController::class);
 
 //Asigancion de sitios
 Route::get('/asignar',[ClienteController::class, 'asignarPuesto']);
+
+//seccion de quejas
+Route::get('/quejas', [QuejaController::class, 'index'])->name('quejas.index');
+Route::get('/quejas/create',[QuejaController::class, 'create'])->name('quejas.create');
+Route::post('/quejas',[QuejaController::class, 'store'])->name('quejas.store');

@@ -103,6 +103,13 @@
                             </font>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{url('/quejas/create')}}" >
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;" >Quejas/Reclamos</font>
+                            </font>
+                        </a>
+                    </li>
 <!--
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
