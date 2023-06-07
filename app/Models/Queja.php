@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Queja extends Model
 {
     protected $fillable = [
-        'nombre', 'descripcion'
+        'codigo_sis', 'descripcion'
     ];
 }

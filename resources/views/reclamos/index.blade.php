@@ -1,8 +1,12 @@
+@extends('layouts.template')
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Lista de Quejas y Reclamos</title>
 </head>
+@section('content')
+
 <body>
     <h1>Lista de Quejas y Reclamos</h1>
     
@@ -11,13 +15,15 @@
             <thead>
                 <tr>
                     <th>Nombre</th>
+                    <th>Codigo SIS</th>
                     <th>Descripción</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($quejas as $queja)
                     <tr>
-                        <td>{{ $queja->nombre }}</td>
+                        <td>{{ $queja->Nombre}}</td>
+                        <td>{{ $queja->CodigoSIS }}</td>
                         <td>{{ $queja->descripcion }}</td>
                     </tr>
                 @endforeach
@@ -28,3 +34,4 @@
     @endif
 </body>
 </html>
+@endsection

@@ -17,10 +17,11 @@
         @csrf
         
         <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre" id="nombre">
+        <input type="text" name="sis" id="sis"  oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9]/,'')" minlength ="9" maxlength ="10" placeholder= "Ingrese CodigoSIS"  required>
+
         
         <label for="descripcion">Descripción:</label><br>
-        <textarea name="descripcion" id="descripcion" rows="5"></textarea><br>
+        <textarea name="descripcion" id="descripcion" rows="5" required></textarea><br>
 
         
         

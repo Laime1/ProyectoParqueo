@@ -4,18 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Queja;
+use Illuminate\Support\Facades\DB;
+
 
 class QuejaController extends Controller
 {
     public function index()
     {
-        $quejas = Queja::all();
-        
+        //$quejas = Queja::all();
+        $quejas = DB::select("SELECT Nombre, CodigoSIS, descripcion FROM clientes,quejas WHERE clientes.CodigoSIS=quejas.codigo_sis");
         return view('reclamos.index', compact('quejas'));
 
-        $queja = new Queja;
-        $queja->nombre = $request->Nombre;
-        $cliente->Apellido = $request->Apellido;
+
     }
     
     public function create()
@@ -26,12 +26,12 @@ class QuejaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nombre' => 'required',
+            'sis' => 'required',
             'descripcion' => 'required',
         ]);
         
         Queja::create([
-            'nombre' => $request->nombre,
+            'codigo_sis' => $request->sis,
             'descripcion' => $request->descripcion,
         ]);
         
