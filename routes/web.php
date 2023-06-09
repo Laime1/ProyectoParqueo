@@ -7,6 +7,8 @@ use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\PersonalController;
 use App\Http\Controllers\CorreoController;
 use App\Http\Controllers\QuejaController;
+use App\Http\Controllers\ControlController;
+
 use Illuminate\Support\Facades\Mail;
 use App\Mail\EnviarCorreo;
 
@@ -90,3 +92,9 @@ Route::get('/asignar',[ClienteController::class, 'asignarPuesto']);
 Route::get('/quejas', [QuejaController::class, 'index'])->name('quejas.index');
 Route::get('/quejas/create',[QuejaController::class, 'create'])->name('quejas.create');
 Route::post('/quejas',[QuejaController::class, 'store'])->name('quejas.store');
+
+//seccionde control de entradas y salidas
+Route::get('/control/entrada',[ControlController::class, 'mostrarFormularioEntrada'])->name('control.entrada.form');
+Route::post('/control/entrada',[ControlController::class, 'registrarEntrada'])->name('control.entrada');
+Route::get('/control/salida',[ControlController::class, 'mostrarFormularioSalida']);
+Route::put('/control/salidas',[ControlController::class, 'registrarSalida']);

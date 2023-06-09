@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Personal extends Model
 {
+    public $timestamps = false;
+
     use HasFactory;
     protected $primaryKey = "codigosispersonal";
 }
