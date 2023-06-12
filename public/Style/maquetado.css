@@ -3,21 +3,16 @@
     grid-template-columns: repeat(11, 1fr);
 	gap: 5px;
 	position: absolute;
-	left:450px;
-	top: 304px;
+	top: 40%;
+	left:25%;
 }
-.button {
-	margin-top: 5px;
-	font-size: 15px;
-	width: 40px;
-	height: 60px;
-	cursor: pointer;
-}
+
 
 #contenedorBotones2 {
 	position: absolute;
-	left:450px;
-	top: 600px;
+	
+	top: 70%;
+	left:25%;
 }
 .button {
 	margin-top: 5px;
@@ -31,42 +26,24 @@
 	display: grid;
     grid-template-columns: repeat(1, 1fr);
 	position: absolute;
-	left:1000px;
-	top: 193px;
+	top: 25%;
+	left:70%;
 	}
-	.button {
-	margin-top: 5px;
-	font-size: 15px;
-	width: 40px;
-	height: 60px;
-	cursor: pointer;
-	}
+	
 	#contenedorBotones3 {
 		display: grid;
 		grid-template-columns: repeat(1, 1fr);
-        position: absolute;
-        left:358px;
-        top: 173px;
+		position: absolute;
+		top: 25%;
+		left:17%;
         }
-        .button {
-        margin-top: 5px;
-        font-size: 15px;
-        width: 40px;
-        height: 60px;
-        cursor: pointer;
-        }
-		#contenedorBotones4 {
-			position: absolute;
-			left:400px;
-			top: 105px;
+        
+	#contenedorBotones4 {
+	position: absolute;
+	top: 15%;
+	left:25%;
 			}
-			.button {
-			margin-top: 5px;
-			font-size: 15px;
-			width: 40px;
-			height: 60px;
-			cursor: pointer;
-			}
+			
 			#ButtonReserva{
 				position: absolute;
 				left:1000px;

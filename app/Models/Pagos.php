@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pagos extends Model
 {
-    use HasFactory;
+    public $timestamps = false;
+    protected $fillable = ['CodigoSIS','Monto', 'pago_desde', 'pago_hasta'];
 }

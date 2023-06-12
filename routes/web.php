@@ -8,7 +8,7 @@ use App\Http\Controllers\PersonalController;
 use App\Http\Controllers\CorreoController;
 use App\Http\Controllers\QuejaController;
 use App\Http\Controllers\ControlController;
-use App\Http\Controllers\PagosController;
+use App\Http\Controllers\PagoController;
 
 use Illuminate\Support\Facades\Mail;
 use App\Mail\EnviarCorreo;
@@ -104,3 +104,7 @@ Route::get('/control/entrada',[ControlController::class, 'mostrarFormularioEntra
 Route::post('/control/entrada',[ControlController::class, 'registrarEntrada'])->name('control.entrada');
 Route::get('/control/salida',[ControlController::class, 'mostrarFormularioSalida']);
 Route::put('/control/salidas',[ControlController::class, 'registrarSalida']);
+
+//seccion de pagos
+Route::get('/pagos',[PagoController::class, 'create']);
+Route::post('/pagoss',[PagoController::class, 'registrarPagos']);

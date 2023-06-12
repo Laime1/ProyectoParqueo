@@ -4,6 +4,8 @@
 <html>
 <head>
     <title>Lista de Quejas y Reclamos</title>
+    <link rel="stylesheet" href="{{asset('Style/tablas.css')}}">
+
 </head>
 @section('content')
 
