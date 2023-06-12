@@ -8,6 +8,7 @@ use App\Http\Controllers\PersonalController;
 use App\Http\Controllers\CorreoController;
 use App\Http\Controllers\QuejaController;
 use App\Http\Controllers\ControlController;
+use App\Http\Controllers\PagosController;
 
 use Illuminate\Support\Facades\Mail;
 use App\Mail\EnviarCorreo;
@@ -92,6 +93,11 @@ Route::get('/asignar',[ClienteController::class, 'asignarPuesto']);
 Route::get('/quejas', [QuejaController::class, 'index'])->name('quejas.index');
 Route::get('/quejas/create',[QuejaController::class, 'create'])->name('quejas.create');
 Route::post('/quejas',[QuejaController::class, 'store'])->name('quejas.store');
+
+//control de pagos
+Route::get('/pagos', [PagosController::class, 'index']);
+
+
 
 //seccionde control de entradas y salidas
 Route::get('/control/entrada',[ControlController::class, 'mostrarFormularioEntrada'])->name('control.entrada.form');
