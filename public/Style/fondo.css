@@ -9,4 +9,11 @@ html, body {
     overflow: hidden;
   }
   
- 
+  @media screen and (max-width:480px){
+    body {
+      font-size:80%; 
+    } 
+    html, body{
+      display: flex;
+  }
+}
