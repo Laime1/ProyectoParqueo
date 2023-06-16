@@ -54,7 +54,7 @@ Route::get('/clientess',[ClienteController::class, 'mostrarDatos']);
 Route::get('/personal',[PersonalController::class, 'index']);
 Route::post('/personals',[PersonalController::class, 'store']);
 Route::resource('/personal',PersonalController::class);
-
+/*
 
 Route::get('/solicitudes/registrarSol', function () {
     return view('solicitudes.registrarSol');
@@ -70,7 +70,7 @@ Route::get('/solicitud',[SolicitudController::class, 'index']);
 Route::resource('/solicitud',SolicitudController::class);
 
 Route::resource('/solicitud',SolicitudController::class);
-
+*/
 //Rutas para Enviar correos
 Route::post('/enviar-correo', [CorreoController::class, 'enviarCorreo']);
 Route::get('/formulario-correo', [CorreoController::class, 'mostrarFormulario']);
@@ -108,3 +108,25 @@ Route::put('/control/salidas',[ControlController::class, 'registrarSalida']);
 //seccion de pagos
 Route::get('/pagos',[PagoController::class, 'create']);
 Route::post('/pagoss',[PagoController::class, 'registrarPagos']);
+
+//seccion de solicitudes
+/*
+Route::get('/solicitud', [SolicitudController::class, 'index'])->name('solicitud.index');
+Route::get('/solicitud/create',[SolicitudController::class, 'create'])->name('solicitud.create');
+Route::post('/solicitud',[SolicitudController::class, 'store'])->name('solicitud.store');
+*/
+
+Route::get('/solicitud/registrosolicitud', function () {
+    return view('solicitud.registrosolicitud');
+});
+
+Route::get('/solicitud/listaSolicitud', function () {
+    return view('solicitud.listaSolicitud');
+});
+
+Route::get('/solicitud',[SolicitudController::class, 'index']);
+/*
+Route::post('store', 'SolicitudController@all')->name("solicitud.store");
+*/
+Route::resource('/solicitud',SolicitudController::class);
+
