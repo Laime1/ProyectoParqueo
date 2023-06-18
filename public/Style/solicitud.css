@@ -70,7 +70,9 @@ body{
 
   /* Estilos para la página */
   
-
+ li{
+  color:aliceblue;
+ }
   h1.titulo {
     color: white;
     text-align: center;
