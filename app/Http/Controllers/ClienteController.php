@@ -80,18 +80,18 @@ class ClienteController extends Controller
         }
         $puesto=$request->input('puesto');
         $inicio=$request->input('inicio');
-        $fin=$request->input('fin');
+        
          
         $accion=$request->input('accion');
 
         //$cliente = DB::select("SELECT * FROM clientes WHERE CodigoSIS='$sis'");
         if($accion==='asignar sitio'){
         DB::update("UPDATE clientes SET Puesto=$puesto WHERE CodigoSIS=$sis ");
-        DB::update("UPDATE puestos SET cliente_sis=$sis, cliente_secundario=$sis2Value, Estado='1', color='green', fecha_inicio='$inicio', fecha_fin='$fin'
+        DB::update("UPDATE puestos SET cliente_sis=$sis, cliente_secundario=$sis2Value, Estado='1', color='green', fecha_inicio='$inicio'
                  WHERE numero=$puesto ");
         }elseif($accion === 'vaciar sitio'){
             DB::update("UPDATE clientes SET Puesto=null WHERE CodigoSIS=$sis ");
-            DB::update("UPDATE puestos SET cliente_sis=null, Estado='0', color='gray', fecha_inicio=null, fecha_fin=null
+            DB::update("UPDATE puestos SET cliente_sis=null, Estado='0', color='gray', fecha_inicio=null
               WHERE numero=$puesto ");
         } 
         return  redirect('maquetado');

@@ -105,8 +105,6 @@
        <input type="text" name="sis2" id="sis2"  oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9]/,'')" minlength ="9" maxlength ="10" placeholder= "Ingrese CodigoSIS"  >
        <label id="">Desde:</label>
        <input type="date" id="inicio" name="inicio" value="{{date('Y-m-d')}}" required></input>
-       <label id="">Hasta:</label>
-       <input type="date" id="fin" name="fin" value="{{date('Y-m-d')}}" required></input>
        <input type="submit" name="accion" value="vaciar sitio">
        <input type="submit" name="accion" value="asignar sitio">
     </form>

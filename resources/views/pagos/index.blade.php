@@ -19,7 +19,7 @@
           <input type="date" name="desde" id="desde" value="{{$dato->pago_hasta}}">
           @endforeach  
           @if (empty($datos))
-          <input type="text" name="sis" id="sis"  oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9]/,'')" minlength ="9" maxlength ="10" placeholder= "Ingrese CodigoSIS"  required> 
+          <input type="text" name="sis" id="sis"  oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength); this.value = this.value.replace(/[^0-9]/,'')" minlength ="9" maxlength ="10" placeholder= "Ingrese CodigoSIS"  value="{{$CodigoSIS}}" required> 
           <input type="submit" name="accion" value="Buscar"><br>
           <label for="">Pagar desde</label>
 

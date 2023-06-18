@@ -34,6 +34,31 @@
     @else
         <p>No hay quejas o reclamos registrados.</p>
     @endif
+    
+    <div id="boton-imprimir">
+        <button onclick="imprimirReporte()">Imprimir</button>
+    </div>
+    <style>
+        @media print {
+            #boton-imprimir {
+                display: none;
+            }
+        }
+    </style>
+<script>
+    function imprimirReporte() {
+        document.getElementById('boton-imprimir').innerHTML = '';
+        window.print();
+    }
+
+    window.addEventListener('afterprint', function() {
+        document.getElementById('boton-imprimir').innerHTML = '<button onclick="imprimirReporte()">Imprimir</button>';
+    });
+</script>
+
+       
+
+  
 </body>
 </html>
 @endsection

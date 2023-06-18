@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Pagos extends Model
 {
     public $timestamps = false;
-    protected $fillable = ['CodigoSIS','Monto', 'pago_desde', 'pago_hasta'];
+    protected $fillable = ['CodigoSIS','Monto', 'pago_desde', 'pago_hasta','estado_pago'];
 }

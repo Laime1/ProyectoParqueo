@@ -131,6 +131,13 @@
                             <li><a class="dropdown-item" href="{{url('/control/salida')}}">Registrar Salidas</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{url('/pagos')}}" >
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;" >Pagos</font>
+                            </font>
+                        </a>
+                    </li>
 <!--
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
