@@ -38,13 +38,7 @@
     <div id="boton-imprimir">
         <button onclick="imprimirReporte()">Imprimir</button>
     </div>
-    <style>
-        @media print {
-            #boton-imprimir {
-                display: none;
-            }
-        }
-    </style>
+    
 <script>
     function imprimirReporte() {
         document.getElementById('boton-imprimir').innerHTML = '';

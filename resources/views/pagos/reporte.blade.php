@@ -41,4 +41,18 @@
     @endforeach
   </tbody>
 </table>
+<div id="boton-imprimir">
+  <button onclick="imprimirReporte()">Imprimir</button>
+</div>
+
+<script>
+function imprimirReporte() {
+  document.getElementById('boton-imprimir').innerHTML = '';
+  window.print();
+}
+
+window.addEventListener('afterprint', function() {
+  document.getElementById('boton-imprimir').innerHTML = '<button onclick="imprimirReporte()">Imprimir</button>';
+});
+</script>
 @endsection

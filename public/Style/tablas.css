@@ -27,3 +27,11 @@ table {
     tr:hover {
         background-color:green;
     }
+    
+        #boton-imprimir {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+    
