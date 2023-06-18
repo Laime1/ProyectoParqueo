@@ -36,7 +36,7 @@ class SolicitudController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
+    {   
         $request->validate([
             'sis' => 'required',
             'descripcion' => 'required',
@@ -47,8 +47,8 @@ class SolicitudController extends Controller
             'codigo_sis' => $request->sis,
             'descripcion' => $request->descripcion,
             'fecha_hora' => $request->fecha_hora
-        ]);
-        return redirect('solicitud')->route('solicitud.create')->with('success', 'La solicitud fue enviada correctamente.');
+        ]);        
+        return redirect()->route('solicitud.create')->with('success', 'La solicitud fue enviada correctamente.');
 
 
 

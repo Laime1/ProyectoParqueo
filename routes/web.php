@@ -125,8 +125,8 @@ Route::get('/solicitud/listaSolicitud', function () {
 });
 
 Route::get('/solicitud',[SolicitudController::class, 'index']);
-/*
+
 Route::post('store', 'SolicitudController@all')->name("solicitud.store");
-*/
+
 Route::resource('/solicitud',SolicitudController::class);
 

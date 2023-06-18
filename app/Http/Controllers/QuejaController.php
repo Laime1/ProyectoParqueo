@@ -24,7 +24,7 @@ class QuejaController extends Controller
     }
     
     public function store(Request $request)
-    {
+    {        
         $request->validate([
             'sis' => 'required',
             'descripcion' => 'required',
