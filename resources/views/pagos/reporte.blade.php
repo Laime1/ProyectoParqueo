@@ -1,7 +1,9 @@
 <!-- Reporte de pagos mensuales -->
 @extends('layouts.template')
 @section('content')
-<h2>Reporte de pagos mensuales</h2>
+<link rel="stylesheet" href="{{asset('Style/tablas.css')}}">
+
+<h1>Reporte de pagos mensuales</h1>
 <table>
   <thead>
     <tr>
@@ -22,7 +24,7 @@
 </table>
 
 <!-- Reporte de pagos anuales -->
-<h2>Reporte de pagos anuales</h2>
+<h1>Reporte de pagos anuales</h1>
 <table>
   <thead>
     <tr>
