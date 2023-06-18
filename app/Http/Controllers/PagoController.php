@@ -27,7 +27,7 @@ class PagoController extends Controller
                   ->groupBy(DB::raw('YEAR(pago_desde)'))
                   ->get();
 
-                  return view('pagos.reporte')->with('pagosMensuales', $pagosMensuales)->with('pagosAnuales', $pagosAnuales);
+        return view('pagos.reporte')->with('pagosMensuales', $pagosMensuales)->with('pagosAnuales', $pagosAnuales);
 
     }
     public function verificarEstadoPago()

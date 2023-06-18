@@ -13,7 +13,7 @@
     @if (session('message'))
     <li>{{session('message')}}</li>
     @endif
-    <h1>Control de pagos</h1>
+    <h1 class="titulo">Control de pagos</h1>
     <form action="{{url('/pagoss')}}" method="post">
         @csrf
         <label for="">Codigo SIS:</label>

@@ -14,7 +14,7 @@
     <li>{{session('message')}}</li>
     @endif
 
-    <h1>Registro de Salida</h1>
+    <h1 class="titulo">Registro de Salida</h1>
     
     <form method="POST" action="{{url('/control/salidas')}}">
         @csrf

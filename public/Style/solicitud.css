@@ -11,10 +11,13 @@ form {
   
 
   }
-body{
-  background-color: white;
-}
 
+body{
+	background-image: url("/imagenes/colores.png") ;
+	background-size: cover; /* para cubrir todo el fondo */
+	background-position: center;
+  
+	}
   label {
     display: block;
     font-size: 16px;
@@ -68,7 +71,8 @@ body{
   /* Estilos para la página */
   
 
-  h1 {
+  h1.titulo {
+    color: white;
     text-align: center;
     margin-top: 50px;
     font-size: 36px;

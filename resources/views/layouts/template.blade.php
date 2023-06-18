@@ -30,12 +30,20 @@
                             </font>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{url('/maquetado')}}" >
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;" >Maquetado</font>
+                                <font style="vertical-align: inherit; color:white; " >
+                                    Maquetado
+                                </font>
                             </font>
                         </a>
+                        <ul class="dropdown-menu dropdown-menu-start">
+                            <li><a class="dropdown-item" href="{{url('/maquetado')}}">Parqueo 1</a></li>
+                            <li><a class="dropdown-item" href="{{url('/maquetado1')}}">Parqueo 2</a></li>
+                            <li><a class="dropdown-item" href="{{url('/maquetado2')}}">Parqueo 3</a></li>
+                        </ul>
                     </li>
                    
 

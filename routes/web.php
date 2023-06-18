@@ -9,6 +9,8 @@ use App\Http\Controllers\CorreoController;
 use App\Http\Controllers\QuejaController;
 use App\Http\Controllers\ControlController;
 use App\Http\Controllers\PagoController;
+use App\Http\Controllers\Parqueo1Controller;
+use App\Http\Controllers\Parqueo2Controller;
 
 use Illuminate\Support\Facades\Mail;
 use App\Mail\EnviarCorreo;
@@ -37,6 +39,10 @@ Route::get('/', function () {
     return view('maquetado.maquetado');
 });*/
 Route::get('/maquetado',[PuestoController::class, 'index']);
+
+
+Route::get('/maquetado1',[PuestoController::class, 'parqueo1']);
+Route::get('/maquetado2',[PuestoController::class, 'parqueo2']);
 
 //cliente
 Route::get('/cliente',[ClienteController::class, 'index']);
@@ -88,6 +94,8 @@ Route::resource('/clientes',ClienteController::class);
 
 //Asigancion de sitios
 Route::get('/asignar',[ClienteController::class, 'asignarPuesto']);
+Route::get('/asignar1',[Parqueo1Controller::class, 'asignarPuesto']);
+Route::get('/asignar2',[Parqueo2Controller::class, 'asignarPuesto']);
 
 //seccion de quejas
 Route::get('/quejas', [QuejaController::class, 'index'])->name('quejas.index');

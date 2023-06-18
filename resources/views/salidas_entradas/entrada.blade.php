@@ -14,7 +14,7 @@
     @if (session('message'))
     <li>{{session('message')}}</li>
     @endif
-    <h1>Registro de Entrada</h1>
+    <h1 class="titulo">Registro de Entrada</h1>
     
     <form method="POST" action="{{ route('control.entrada', ['codigoSIS' => '']) }}">
         @csrf

@@ -9,7 +9,7 @@
 @section('content')
 
 <body>
-    <h1> Queja o Reclamo</h1>
+    <h1 class="titulo"> Queja o Reclamo</h1>
     @if (session('success'))
     <li>{{session('success')}}</li>
     @endif
