@@ -103,6 +103,7 @@ Route::put('/control/salidas',[ControlController::class, 'registrarSalida']);
 //seccion de pagos
 Route::get('/pagos',[PagoController::class, 'create']);
 Route::post('/pagoss',[PagoController::class, 'registrarPagos']);
+Route::get('/pagos/reporte',[PagoController::class, 'reporte']);
 
 //seccion de reportes
 Route::get('/reportes',[ReportController::class, 'index'])->name('reportes.index');

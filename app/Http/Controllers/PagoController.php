@@ -15,6 +15,21 @@ class PagoController extends Controller
         //$pagos=DB::table('pagos')->get();
         return view('pagos.index1');//, compact('pagos'));
     }
+    public function reporte()
+    {
+        $pagosMensuales = DB::table('pagos')
+                    ->select(DB::raw('YEAR(pago_desde) AS anio, MONTH(pago_desde) AS mes, SUM(Monto) AS total'))
+                    ->groupBy(DB::raw('YEAR(pago_desde), MONTH(pago_desde)'))
+                    ->get();
+
+        $pagosAnuales = DB::table('pagos')
+                  ->select(DB::raw('YEAR(pago_desde) AS anio, SUM(Monto) AS total'))
+                  ->groupBy(DB::raw('YEAR(pago_desde)'))
+                  ->get();
+
+                  return view('pagos.reporte')->with('pagosMensuales', $pagosMensuales)->with('pagosAnuales', $pagosAnuales);
+
+    }
     public function verificarEstadoPago()
     {
         VerificarEstadoPagoJob::dispatch();
@@ -96,6 +111,7 @@ class PagoController extends Controller
             'desdes' =>$desdes
             ]);
      }
+      
      
     }
 

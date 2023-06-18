@@ -131,12 +131,19 @@
                             <li><a class="dropdown-item" href="{{url('/control/salida')}}">Registrar Salidas</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{url('/pagos')}}" >
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle align-content-end align-items-end" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;" >Pagos</font>
+                                <font style="vertical-align: inherit; color:white; " >
+                                    Pagos
+                                </font>
                             </font>
                         </a>
+                        <ul class="dropdown-menu dropdown-menu-end align-items-end">
+                            <li><a class="dropdown-item" href="{{url('/pagos')}}">Registrar Pagos</a></li>
+                            <li><a class="dropdown-item" href="{{url('/pagos/reporte')}}">Reporte de Pagos</a></li>
+                        </ul>
                     </li>
 <!--
                     <li class="nav-item dropdown">
