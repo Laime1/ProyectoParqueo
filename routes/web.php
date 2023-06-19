@@ -11,6 +11,7 @@ use App\Http\Controllers\ControlController;
 use App\Http\Controllers\PagoController;
 use App\Http\Controllers\Parqueo1Controller;
 use App\Http\Controllers\Parqueo2Controller;
+use App\Http\Controllers\AuthController;
 
 use Illuminate\Support\Facades\Mail;
 use App\Mail\EnviarCorreo;
@@ -32,6 +33,9 @@ Route::get('/', function () {
 });
 */
 Route::get('/', function () {
+    return view('login.index');
+});
+Route::get('/inicio', function () {
     return view('inicio');
 });
 //Maquetado
@@ -47,35 +51,13 @@ Route::get('/maquetado2',[PuestoController::class, 'parqueo2']);
 //cliente
 Route::get('/cliente',[ClienteController::class, 'index']);
 Route::post('/clientes',[ClienteController::class, 'store']);
-
-
-
 Route::get('/clientess',[ClienteController::class, 'mostrarDatos']);
 
 //Route::view('/maquetado','maquetado.maquetado');
 
-
-//Route::resource('/solicitud',SolicitudController::class);
-
 Route::get('/personal',[PersonalController::class, 'index']);
 Route::post('/personals',[PersonalController::class, 'store']);
 Route::resource('/personal',PersonalController::class);
-
-
-Route::get('/solicitudes/registrarSol', function () {
-    return view('solicitudes.registrarSol');
-});
-
-Route::get('/solicitudes/listaSol', function () {
-    return view('solicitudes.listaSol');
-});
-
-Route::get('/solicitud',[SolicitudController::class, 'index']);
-//Route::post('store', 'SolicitudController@all')->name("solicitud.store");
-
-Route::resource('/solicitud',SolicitudController::class);
-
-Route::resource('/solicitud',SolicitudController::class);
 
 //Rutas para Enviar correos
 Route::post('/enviar-correo', [CorreoController::class, 'enviarCorreo']);
@@ -118,3 +100,47 @@ Route::get('/reportes',[ReportController::class, 'index'])->name('reportes.index
 
 //para probar estado de pago
 Route::get('/estado',[PagoController::class, 'verificarEstadoPago']);
+
+//solicitudes
+/*
+Route::get('/solicitud', [SolicitudController::class, 'index'])->name('solicitud.index');
+Route::get('/solicitud/create',[SolicitudController::class, 'create'])->name('solicitud.create');*/
+Route::post('/solicitud',[SolicitudController::class, 'store'])->name('solicitud.store');
+
+
+Route::get('/solicitud/registrosolicitud', function () {
+    return view('solicitud.registrosolicitud');
+});
+
+Route::get('/solicitud/listaSolicitud', function () {
+    return view('solicitud.listaSolicitud');
+});
+
+Route::get('/solicitud',[SolicitudController::class, 'index']);
+Route::post('/solicitud',[SolicitudController::class, 'store']);
+//Route::post('store', 'SolicitudController@all')->name("solicitud.store");
+
+Route::resource('/solicitud',SolicitudController::class);
+
+//login
+/*
+Route::prefix('auth')->group(function(){
+Route::get('login', [AuthController::class,'register'])->name('login');
+
+
+
+});
+Route::get('/register',[AuthController::class,'register']);
+
+Route::post('/register/registerVerify',[AuthController::class,'registerVerify']);
+
+
+Route::get('/login',[AuthController::class, 'create']);
+Route::get('/login', function () {
+    return view('login.index');
+});
+Route::resource('/login',AuthController::class);
+*/
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);
+Route::get('/perfil',[AuthController::class, 'login']);

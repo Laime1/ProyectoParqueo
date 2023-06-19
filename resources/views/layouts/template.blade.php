@@ -13,7 +13,7 @@
 <header>
 <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{url('/')}}">
+            <a class="navbar-brand" href="{{url('/inicio')}}">
                 <img src="{{asset('imagenes/logofcyt.png')}}" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -24,7 +24,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{url('/')}}" >
+                        <a class="nav-link active" aria-current="page" href="{{url('/inicio')}}" >
                             <font style="vertical-align: inherit;">
                                 <font style="vertical-align: inherit;" > Inicio</font>
                             </font>
@@ -152,6 +152,11 @@
                             <li><a class="dropdown-item" href="{{url('/pagos')}}">Registrar Pagos</a></li>
                             <li><a class="dropdown-item" href="{{url('/pagos/reporte')}}">Reporte de Pagos</a></li>
                         </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        
+                        <a class="nav-link align-content-end align-items-end d-flex" href="{{route('login')}}" role="button">Salir</a>
                     </li>
 <!--
                     <li class="nav-item dropdown">

@@ -13,11 +13,14 @@ class SolicitudController extends Controller
      */
     public function index()
     {
+        $solicitudes= DB::select("SELECT nombre, apellido, codigo_sis, descripcion, fecha_hora FROM clientes, solicitud WHERE clientes.CodigoSIS= solicitud.codigo_sis;");
+        return view('solicitud.listasolicitud', compact('solicitudes'));
+/*
         $solicituds = DB::table('solicitud')
         ->get();
 
         return view('solicitudes.listaSol', compact('solicituds'));
-         
+        */ 
        }
 
     /**
@@ -25,7 +28,8 @@ class SolicitudController extends Controller
      */
     public function create()
     {
-        return view('solicitudes.registrarSol');
+        return view('solicitud.registrosolicitud');
+  //      return view('solicitudes.registrarSol');
     }
 
     /**
@@ -33,7 +37,22 @@ class SolicitudController extends Controller
      */
     public function store(Request $request)
     {
-        $solicitud = new Solicitud;
+        $request->validate([
+            'sis' => 'required',
+            'descripcion' => 'required',
+            'fecha_hora' => 'required'
+        ]);
+        
+        Solicitud::create([
+            'codigo_sis' => $request->sis,
+            'descripcion' => $request->descripcion,
+            'fecha_hora' => $request->fecha_hora
+        ]);
+        return redirect()->route('solicitud.create')->with('success', 'La solicitud fue enviada correctamente.');
+
+
+
+    /*    $solicitud = new Solicitud;
         
         $solicitud->NombreC = $request->input('Nombre');
         $solicitud->ApellidoC = $request->input('Apellido');
@@ -41,7 +60,7 @@ class SolicitudController extends Controller
         $solicitud->TipoSolicitud = $request->input('TipoSol');
         $solicitud->DetalleSolicitud = $request->input('DetalleSol');
         $solicitud->save();
-        return redirect('solicitud')->with('message', '¡Registro exitoso!!!!!!!');
+        return redirect('solicitud')->with('message', '¡Registro exitoso!!!!!!!');*/
     }
 
     /**
