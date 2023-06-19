@@ -54,7 +54,7 @@ body{
 		text-align: center;
 	}
 	#fila_vacia{
-		grid-row: span 2;
+		grid-row: span ;
 	}
 	
 .modal {
